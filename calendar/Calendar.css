@@ -1,0 +1,226 @@
+html,* { box-sizing: border-box; }
+body { background-color: #fafafa; line-height:1.6;}
+.lead { font-size: 1.5rem; font-weight: 300; }
+.container { margin: 150px auto; max-width: 960px; }
+
+.hbContainer {
+    max-width: 400px;
+    margin: auto;
+    font-family: 'Snowburst One', serif;
+    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.weekdayList {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(1, 40px);
+    align-items: center;
+    justify-items: center;
+    grid-gap: 8px;
+    font-size: 1.2em;
+    color: #707070;
+}
+
+.calendarList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 40px);
+    align-items: center;
+    justify-items: center;
+    grid-gap: 8px;
+    font-size: 14px;
+    color: #707070;
+}
+
+.calendarYearMonth {
+    /* margin-top: 24px; */
+    font-size: 1.6em;
+    color: #707070;
+    font-weight: 800;
+}
+
+.calendarYearMonth p {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.calBtn {
+    user-select: none;
+    cursor: pointer;
+    background: #007bff;
+    margin: 8px 0;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    line-height: 22px;
+    color: #fff;
+    border: 1px solid #007bff;
+}
+
+.month-cell {
+    height: 100%;
+    width: 75%;
+    border: 1px solid #007bff;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: transparent;
+    color: #007bff;
+}
+
+.month-cell:hover, 
+.month-cell:active,
+.month-cell.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.month-cell.active:hover,
+.month-cell.active:active {
+    background-color: transparent;
+    color: #007bff;
+}
+
+.calendar-date-info-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 20em;
+    max-width: inherit;
+    margin: auto;
+}
+
+.calendar-date-info-container > header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.event-item {
+    border: 0.1em solid #707070;
+    box-shadow: 0.1em 0.1em 0.1em #707070;
+    margin-top: 0.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.event-item:hover,
+.event-item:active,
+.event-item.event-visited:hover,
+.event-item.event-visited:active,
+.event-item.event-not-visited:hover,
+.event-item.event-not-visited:active,
+.event-item.event-cancelled:hover,
+.event-item.event-cancelled:active,
+.event-item.event-neglected:hover,
+.event-item.event-neglected:active
+ {
+    background: transparent;
+    color: black;
+    cursor: pointer;
+}
+
+.event-item > p:not(.event-item > p:first-child) {
+    margin-top: -10px;
+}
+
+.event-item.event-visited {
+    background: #189707;
+    color: white;
+}
+
+.event-item.event-not-visited {
+    background: #007bff;
+    color: white;
+}
+
+.event-item.event-visited {
+    background: #189707;
+    color: white;
+}
+
+.event-item.event-not-visited {
+    background: #007bff;
+    color: white;
+}
+
+.event-item.event-cancelled {
+    background: #707070;
+    color: white;
+}
+
+.event-item.event-neglected {
+    background: #c40b0b;
+    color: white;
+}
+
+.tooltip-inner {
+    max-width: 9.5em !important;
+    max-height: 19em !important;
+}
+
+.legend-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.legend-container > .row.legend-header {
+    border-bottom: 0.2em dashed white;
+}
+
+.legend-container > .row {
+    align-items: center;
+    border: 1px solid black;
+}
+
+.legend-container > .row > p {
+    font-size: 1.1em;
+    margin-top: 0.6em;
+    margin-left: 0.3em;
+}
+
+.legend {
+    height: 1em;
+    width: 1em;
+    border-radius: 0.2em;
+}
+
+.legend.visited {
+    background: #189707;
+}
+
+.legend.not-visited {
+    background: #007bff;
+}
+
+.legend.cancelled {
+    background: #707070;
+}
+
+.legend.neglected {
+    background: #c40b0b;
+}
